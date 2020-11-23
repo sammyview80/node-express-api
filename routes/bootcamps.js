@@ -10,12 +10,14 @@ const Bootcamp = require('../models/Bootcamp');
 
 // Include other resouece routers
 const courseRouter = require('./courses');
+const reviewsRouter = require('./reviews');
 
 // Protect middleware
 const {protect, authorize} = require('../middleware/auth');
 
 // Re-route into other resource routers
 router.use('/:bootcampId/courses', courseRouter);
+router.use('/:bootcampId/reviews', reviewsRouter);
 
 const {getBootcamp, 
     getBootcamps, 

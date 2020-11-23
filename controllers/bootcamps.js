@@ -5,7 +5,7 @@ const Bootcamp = require('../models/Bootcamp');
 const geocoder = require('../utils/geoCoder');
 const { remove } = require('../models/Bootcamp');
 
-// @des     Get all bootcamps
+//@des      Get all bootcamps
 //@route    GET /api/v1/bootcamps
 //@access   Public
 exports.getBootcamps = asyncHandler(async (req, res, next) => {
