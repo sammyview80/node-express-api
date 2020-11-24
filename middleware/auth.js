@@ -9,7 +9,12 @@ const colors = require('colors');
 exports.protect = asyncHandler( async (req, res, next) => {
     let token;
     if(req.headers.authorization && req.headers.authorization.startsWith('Bearer')){
+        // Token from bearer authorization header
         token = req.headers.authorization.split(' ')[1];
+    }else if (req.cookies.token){
+        // Token from cookie
+        console.log('cookie from token')
+        token = req.cookies.token;
     }
 
     // Make sure token exist
